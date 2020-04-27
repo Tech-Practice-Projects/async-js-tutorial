@@ -47,4 +47,17 @@ getUser(id, user => {
 
 Callback hell can be fixed by taking the anonymous functions in javascript and turning them into named functions. In abouve nested loops there are three anonymous functions. One example of an anonymous function is
 `commits => { console.log(commits); }`. We start by naming the innermost
-anonymous function and work our way up.
+anonymous function and work our way up. Checkout callbackhell_3.js.
+
+## Promises
+
+Promise is an object that holds the eventual result of an asynchronous operation. When an asynchronous operation completes it can either result in a `value` or an `error`. The promise basically promises you that it will give you the result of an async operation. This promise object can be in one of the three states.
+
+- `Pending` state - initially when the promise object is created. At this point it will kick off some async operations.
+- `Fulfilled` state - When the results are ready and the async operation is completed successfully the promise changes to fulfilled state. Here we get back a `Value`.
+- `Rejected` state - when something goes wrong while fulfilling the async operation. We get back an `Error` here.
+
+**Methods available on Promise class**
+
+- `Promise.all()` takes an array of promises and kicks off multiple promises parellelly. This wil return a new promise that will be resolved when all the promises in the given array are resolved/rejected. See promise_4.js
+- `Promise.resolve()` and `Promise.reject()` to call already resolved or rejected promise. See promise_3.js
