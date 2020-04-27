@@ -57,8 +57,14 @@ Promise is an object that holds the eventual result of an asynchronous operation
 - `Fulfilled` state - When the results are ready and the async operation is completed successfully the promise changes to fulfilled state. Here we get back a `Value`.
 - `Rejected` state - when something goes wrong while fulfilling the async operation. We get back an `Error` here.
 
-**Methods available on Promise class**
+### Methods available on Promise class
 
 - `Promise.resolve()` and `Promise.reject()` to call already resolved or rejected promise. See promise_3.js.
 - `Promise.all([p1, p2, p3 ..])` takes an array of promises and kicks off multiple promises parellelly. This wil return a new promise that will be resolved when all the promises in the given array are resolved. If any of the promise in the array is rejected then this promise is rejected. See promise_4.js
 - `Promise.race([p1, p2, p3 ..])` takes an array of promises and kicks off multiple promises parellelly. But here, as long as one promise in this array that is passed to it is resolved / rejected FIRST this promise with either resolve or reject accordingly. See promise_5.js
+
+## Async Await
+
+Whenever there is a function that uses `await` operator, you need to _decorate_ that function with `async` modifier.
+This surrounding _function_ returns a promise of _void_ that means that the promise once fulfilled does not resolve in a value.
+It is a requirement in Javascript that whenever you use await it must be in a function that is decorated with `async`. This is because the await needs to be within a `try` `catch` block.

@@ -4,6 +4,7 @@ Note that async await is built on top of promises.
  */
 /* Below code re writes promise_2.js using async await, note the try catch
 is used in order to handle the .catch in promises */
+// displayCommits returns Promise < Void >
 async function displayCommits(id) {
   try {
     const user = await getUser(id); // await waits for the async task to complete
@@ -18,12 +19,12 @@ async function displayCommits(id) {
 /* ------------------------------------------------------- */
 /* Call the above function */
 /* ------------------------------------------------------- */
-displayCommits(20);
+displayCommits(20); // returns Promise<Void>
 console.log(
   "Even though this line is written after displayCommits it will print before all these async task. This is a sync task"
 );
 /* ------------------------------------------------------- */
-/* replaced all callbacks to promises */
+/* Promise Functions */
 /* ------------------------------------------------------- */
 function getUser(id) {
   return new Promise((resolve, reject) => {
