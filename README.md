@@ -24,3 +24,27 @@ Asynchronous does not mean concurrent or multi-threaded. There is just a single 
 - Async/await
 
 ## Callbacks
+
+An asynck function takes callback function as a parameter and returns data asynchronously via callback.
+
+### Callback hell
+
+This is when multiple functions are nested to read async data
+
+```javascript
+getUser(id, user => {
+  console.log(user);
+  getRepositories(user.gitHubUserName, repos => {
+    console.log(repos);
+    getCommits(repos[0], commits => {
+      console.log(commits);
+    });
+  });
+});
+```
+
+### Named functions
+
+Callback hell can be fixed by taking the anonymous functions in javascript and turning them into named functions. In abouve nested loops there are three anonymous functions. One example of an anonymous function is
+`commits => { console.log(commits); }`. We start by naming the innermost
+anonymous function and work our way up.
