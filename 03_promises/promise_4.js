@@ -29,8 +29,3 @@ What is happening above is as follow.
     of these promises are returned as an array. (result)
     3. This result array has the result os both p1 and p2 promise.
 */
-
-/*
-What if you want to use the data of the first promise that was fullfilled.
-In our case the p2 finishes first.
-*/

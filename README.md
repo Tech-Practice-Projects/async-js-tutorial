@@ -59,5 +59,6 @@ Promise is an object that holds the eventual result of an asynchronous operation
 
 **Methods available on Promise class**
 
-- `Promise.all()` takes an array of promises and kicks off multiple promises parellelly. This wil return a new promise that will be resolved when all the promises in the given array are resolved/rejected. See promise_4.js
-- `Promise.resolve()` and `Promise.reject()` to call already resolved or rejected promise. See promise_3.js
+- `Promise.resolve()` and `Promise.reject()` to call already resolved or rejected promise. See promise_3.js.
+- `Promise.all([p1, p2, p3 ..])` takes an array of promises and kicks off multiple promises parellelly. This wil return a new promise that will be resolved when all the promises in the given array are resolved. If any of the promise in the array is rejected then this promise is rejected. See promise_4.js
+- `Promise.race([p1, p2, p3 ..])` takes an array of promises and kicks off multiple promises parellelly. But here, as long as one promise in this array that is passed to it is resolved / rejected FIRST this promise with either resolve or reject accordingly. See promise_5.js
